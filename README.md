@@ -1,2 +1,3 @@
-# chatsphere
-💬 Community chat made with react and firebase.
+# WIP - ChatSphere
+
+Layout by: [George Chichua](https://dribbble.com/WesternJERO)
