@@ -7,13 +7,13 @@ export default defineConfig({
   plugins: [react()],
   build: {},
   resolve: {
-    alias: {
-      '@': resolve(__dirname, './src'),
-      '@assets': resolve(__dirname, './assets'),
-      '@components': resolve(__dirname, './components'),
-      '@firebase': resolve(__dirname, './firebase'),
-      '@i18n': resolve(__dirname, './i18n'),
-      '@theme': resolve(__dirname, './theme')
-    }
+    alias: [
+      { find: '@', replacement: resolve(__dirname, './src') },
+      { find: '@assets', replacement: resolve(__dirname, './src/assets') },
+      { find: '@components', replacement: resolve(__dirname, './src/components') },
+      { find: '@firebase', replacement: resolve(__dirname, './src/firebase') },
+      { find: '@i18n', replacement: resolve(__dirname, './src/i18n') },
+      { find: '@theme', replacement: resolve(__dirname, './src/theme') }
+    ]
   }
 })
