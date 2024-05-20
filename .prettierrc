@@ -1,0 +1,25 @@
+{
+  "arrowParens": "avoid",
+  "endOfLine": "lf",
+  "jsxSingleQuote": true,
+  "printWidth": 100,
+  "semi": false,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "none",
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "importOrder": [
+    "react",
+    "<THIRD_PARTY_MODULES>",
+    "@assets",
+    "@stories",
+    "@types",
+    "@components",
+    "@pages",
+    "@i18n",
+    "@styles",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}
