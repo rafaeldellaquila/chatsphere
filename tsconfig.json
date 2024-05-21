@@ -19,7 +19,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "baseUrl": "./src",
-    "types": ["@testing-library/jest-dom"],
     "paths": {
       "@assets/*": ["assets/*"],
       "@story/*": ["stories/*"],
@@ -31,7 +30,7 @@
       "@utils/*": ["utils/*"],
     }
   },
-  "include": ["src", ".jest/fileMock.js", "Configure.mdx"],
+  "include": ["src"],
   "exclude": ["node_modules", "**/node_modules/*", "dist", "**/dist/*"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

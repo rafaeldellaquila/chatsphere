@@ -41,6 +41,7 @@ export default {
     large: '18rem',
     xlarge: '20rem',
     xxlarge: '28rem',
+    xxxlarge: '35rem',
     huge: '52rem'
   },
   spacings: {

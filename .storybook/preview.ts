@@ -13,7 +13,7 @@ const preview: Preview = {
       values: [
         {
           name: 'dark',
-          value: theme.colors.tertiary
+          value: theme.colors.secondary
         },
         {
           name: 'light',
