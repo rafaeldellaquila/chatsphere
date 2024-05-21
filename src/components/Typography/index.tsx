@@ -1,5 +1,3 @@
-import { createElement } from 'react'
-
 import * as S from './styles'
 
 export type TypographyProps = {
@@ -7,12 +5,18 @@ export type TypographyProps = {
   size?: 'small' | 'medium' | 'large'
   variant?: 'h1' | 'h2' | 'h3' | 'p' | 'span'
   children?: React.ReactNode
+  lineClamp?: string
 }
 
 export default function Typography({
   variant = 'span',
   children = 'add_text',
-  size = 'medium'
+  size = 'medium',
+  lineClamp = '0'
 }: TypographyProps) {
-  return <S.Wrapper>{createElement(variant, size, undefined, children)}</S.Wrapper>
+  return (
+    <S.Wrapper as={variant} size={size} lineClamp={lineClamp}>
+      {children}
+    </S.Wrapper>
+  )
 }
