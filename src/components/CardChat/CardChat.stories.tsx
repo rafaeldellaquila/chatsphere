@@ -11,6 +11,13 @@ const meta: Meta<typeof CardChat> = {
 export default meta
 
 export const Default: Story = {
-  render: () => <CardChat />,
-  args: {}
+  args: {
+    src: 'https://i.pravatar.cc/300',
+    alt: 'WIP - Avatar - username',
+    username: 'username',
+    message: 'message',
+    time: '12:00',
+    checked: false
+  },
+  render: args => <CardChat {...args} />
 }

@@ -1,23 +1,38 @@
+import { Icon } from '@iconify/react/dist/iconify.js'
+
 import Avatar from '@components/Avatar'
 import Typography from '@components/Typography'
 
+import theme from '@styles/theme'
+
 import * as S from './styles'
 
-export default function CardChat() {
+type CardChatProps = {
+  src: string
+  alt: string
+  username: string
+  message: string
+  time: string //TODO: change to Date
+  checked: boolean
+}
+
+export default function CardChat({ src, alt, username, message, time, checked }: CardChatProps) {
   return (
-    <S.Wrapper>
-      <Avatar size='large' src='https://i.pravatar.cc/300' alt='WIP - Avatar - username' />
+    <S.Wrapper onClick={() => console.log('clicked')}>
+      <Avatar size='large' src={src} alt={alt} />
       <div>
-        <Typography variant='span' size='medium'>
-          UXWhiz
-        </Typography>
-        <Typography variant='span' size='small'>
-          Hey, just saw an incredible design...
-        </Typography>
-      </div>
-      <div id='time'>
-        <span>12:00</span>
-        <span>icon</span>
+        <S.Content>
+          <Typography variant='h3' size='large'>
+            {username}
+          </Typography>
+          <Typography variant='span' size='medium' lineClamp='1'>
+            {message}
+          </Typography>
+        </S.Content>
+        <S.Timestamp>
+          <span>{time}</span>
+          {checked && <Icon icon='solar:check-read-linear' color={theme.colors.primary} />}
+        </S.Timestamp>
       </div>
     </S.Wrapper>
   )
