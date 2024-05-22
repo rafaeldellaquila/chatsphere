@@ -1,34 +1,33 @@
 import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.div<{ isFocused: boolean }>`
-  display: flex;
-  align-items: center;
-  border: 1px solid ${({ theme }) => theme.colors.gray};
-  border-radius: ${({ theme }) => theme.border.radius};
-  padding: 0.5rem;
-  transition: border-color 0.3s;
-  border-color: ${({ theme }) => theme.colors.secondary};
-  background: ${({ theme }) => theme.colors.tertiary};
-
-  ${({ isFocused, theme }) =>
-    isFocused &&
-    css`
-      border-color: ${theme.colors.gray};
-    `}
+  ${({ theme, isFocused }) => css`
+    display: flex;
+    align-items: center;
+    border: 1px solid ${theme.colors.gray};
+    border-radius: ${theme.border.radius};
+    padding: 0.5rem;
+    transition: border-color 0.3s;
+    border-color: ${theme.colors.secondary};
+    background: ${theme.colors.tertiary};
+    border-color: ${isFocused && theme.colors.gray};
+  `}
 `
 
 export const InputElement = styled.input`
-  flex: 1;
-  padding: 0.5rem;
-  font-size: ${({ theme }) => theme.font.sizes.medium};
-  color: ${({ theme }) => theme.colors.gray};
-  font-size: ${({ theme }) => theme.font.sizes.small};
+  ${({ theme }) => css`
+    flex: 1;
+    padding: 0.5rem;
+    font-size: ${theme.font.sizes.medium};
+    color: ${theme.colors.gray};
+    font-size: ${theme.font.sizes.small};
 
-  &::placeholder {
-    color: ${({ theme }) => theme.colors.gray};
-    font-size: ${({ theme }) => theme.font.sizes.small};
-    font-family: ${({ theme }) => theme.font.family};
-  }
+    &::placeholder {
+      color: ${theme.colors.gray};
+      font-size: ${theme.font.sizes.small};
+      font-family: ${theme.font.family};
+    }
+  `}
 `
 
 export const IconWrapper = styled.div`

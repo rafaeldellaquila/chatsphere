@@ -17,7 +17,7 @@ const globalList = [
     title: 'community'
   },
   {
-    icon: <Icon icon='mingcute:chat-1-line' />,
+    icon: <Icon icon='akar-icons:chat-bubble' />,
     title: 'chat'
   },
   {

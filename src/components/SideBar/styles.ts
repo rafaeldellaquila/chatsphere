@@ -1,3 +1,4 @@
+import { lighten } from 'polished'
 import styled, { css } from 'styled-components'
 
 type SidebarProps = {
@@ -14,7 +15,7 @@ export const Wrapper = styled.aside<SidebarProps>`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
+    border-right: 1px solid ${lighten(0.1, theme.colors.secondary)};
     .logo {
       display: flex;
       flex-direction: ${collapsed ? 'row' : 'column'};
@@ -32,7 +33,6 @@ export const List = styled.ul`
   display: flex;
   flex-direction: column;
   width: 100%;
-
   button {
     text-align: left;
   }
@@ -41,7 +41,7 @@ export const List = styled.ul`
 export const Divider = styled.hr`
   ${({ theme }) => css`
     margin: ${theme.spacings.xsmall} 0;
-    border-color: ${theme.colors.secondary};
+    border-color: ${lighten(0.1, theme.colors.secondary)};
     opacity: 0.2;
   `}
 `
